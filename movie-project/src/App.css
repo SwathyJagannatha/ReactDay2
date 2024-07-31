@@ -1,0 +1,99 @@
+/* 
+h2{
+    justify-content: center;
+    text-align: center;
+}
+/* .movie-list{
+    align-items: center;
+    width : auto;
+    height : 25vh;
+    justify-content:center;
+    border-radius: 5px;
+    border-color: lightpink;
+    box-shadow: 2px 2px;
+    background: linear-gradient(rgb(219, 87, 87),rgb(233, 233, 144));
+    position:relative;
+} 
+select {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+options{
+    align-items: center;
+}
+
+.movie-select,.card {
+    width: 400px; 
+    height:700px;
+    margin: 0 auto; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background : linear-gradient(rgb(189, 46, 70),rgb(204, 208, 141));
+}
+
+
+
+
+.movie-select select {
+    width: 100%; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    margin-top: 10px; 
+
+.remove-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #615dd7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ul strong{
+    color : green;
+    font-size: 34px;
+} */
+
+.movie-select {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: linear-gradient(rgb(222, 106, 106),rgb(219, 219, 114));
+}
+
+.movie-select select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.remove-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #8c62dc;
+    color: rgb(8, 3, 3);
+    text-shadow: 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

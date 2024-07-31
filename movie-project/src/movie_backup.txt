@@ -1,0 +1,211 @@
+import React, { useState } from "react";
+//import CSS
+import "./App.css";
+import Movie from './Movie'
+
+function MoviesList() {
+  const [movies, setMovies] = useState([
+    {
+      title: "Fighter",
+      genre: "Genre",
+      description: "Description",
+      //showDetails: false,
+    },
+    {
+      title: "House of Dragons",
+      genre: "Genre1",
+      description: "Description1",
+      //showDetails: false,
+    },
+  ]);
+
+  const[showDetails,setshowDetails]= useState(false);
+  const [filterType, setFilterType] = useState("Titanic");
+//   const [movieCategory, setCategory] = useState([
+//     {type: "Horror", name : "one",genre : "Genre1"},
+//     {type: "Adventure", name : "two", genre : "Genre2"},
+//     {type : "Fiction", name : "three" , genre : "Genre3"},
+//     // "Fantasy",
+//     // "Comedy",
+//   ]);
+  //function to toggle details for a movie
+
+  const removeMovie = (title) => {
+     setMovies(prevMovies => prevMovies.filter(movie => movie.title !== title));
+  }
+
+  const filteredMovie = movies.filter(
+    (movie) => movie.title.toLowerCase() == filterType.toLowerCase()
+  );
+
+  //shodetails true or false
+  const toggleDisplay = () =>
+  {
+     setshowDetails(!showDetails);
+  }
+      
+  //working one
+//   return (
+//     <div className="movie-select">
+
+//     <h2> Select your favourite movie :</h2>
+//      <select>
+//          {movies.map((movie, index) => (
+//           <option key={index} value={movie.title}>
+//             {movie.title}
+//           </option>
+//          ))}
+//        </select>
+
+
+//         <button onClick = {toggleDisplay}>
+//             {showDetails ? 'Hide Details' : 'Display Details'}
+//         </button>
+//         <h2> Movie Details:</h2>
+
+//         {showDetails && (
+
+//         <ul>
+//             {movies.map(movie => (
+//                 <li key = {movie.title} >
+//                   {movie.genre} : {movie.title} - {movie.description}
+//                 </li>
+
+//             ))} 
+//         </ul>
+//         )}
+
+
+//     </div>
+//     );
+// }
+
+//testing
+
+const handleHideDetails=()=>{
+   
+}
+
+const handleshowDetails=()=>{
+
+}
+
+return (
+
+    <div className="movie-select">
+      <p>
+        {/* Ternary operator: boolean ? (value if true) : (value if false) */}
+        { showDetails ? 
+          `Displaying additional movie details` 
+          : 
+          'Hiding additional movie details'
+        }
+      </p>
+
+      { showDetails == true? 
+          <button onClick={toggleDisplay}>Hide Details</button>
+          : 
+          <button onClick={toggleDisplay}>Show Details</button>
+        }
+
+      {showDetails ? (
+        // If the user is not logged in, handleLoginClick
+        <button onClick={handleHideDetails}>No details</button>
+      ) : (
+        // If the user is logged in, log them out handleLogoutClick
+        <button onClick={handleshowDetails}>Additional Details</button>
+      )}
+
+      <h1>Movie Details</h1>
+      {showDetails && (
+      <ul>
+      {filteredMovie.map(movie => (
+                        <li key={movie.title}>
+                            {movie.genre}: {movie.title} - {movie.description}
+                            <button className="remove-button" onClick={() => removeMovie(movie.title)}>
+                                Remove Movie from List
+                            </button>
+                        </li>
+                    ))}
+     </ul>
+      )}
+    </div>
+
+)}
+
+
+ //   const [movieCategory, setCategory] = useState([
+  //     {type: "Horror", name : "one",genre : "Genre1"},
+  //     {type: "Adventure", name : "two", genre : "Genre2"},
+  //     {type : "Fiction", name : "three" , genre : "Genre3"},
+  //     // "Fantasy",
+  //     // "Comedy",
+  //   ]);
+  //function to toggle details for a movie
+
+
+
+
+
+
+
+
+
+
+//   return (
+//     <div className="movie-select">
+//       <h2> Select your favourite movie :</h2>
+//       <select>
+//         {movies.map((movie, index) => (
+//           <option key={index} value={movie.title}>
+//             {movie.title}
+//           </option>
+//         ))}
+//       </select>
+
+//       <ul>
+//         {
+//           filteredMovie.map((movie) => (
+//             <li key={movie.title}>
+//               <Movie title={movie.title} genre={movie.genre} description={movie.description} />
+//               <button onClick={() => removeMovie(movie.title)}>Remove Movie from List</button>
+//             </li>
+//           ))
+//         }
+//       </ul>
+//       </div>
+//   )
+// }
+
+export default MoviesList;
+
+// return (
+//     <div className="movie-list">
+//     <h2> Favourite Movies :</h2>
+//        <ul>
+//          {/* or filtering logic */}
+//             {/*  moivies.map((movies,index) => (<li key = {index}> {movie.title}</li>)*/}
+//             {
+//               movies.map((movie, index) =>
+//               (
+//                  <li key={index}>{movie.title}</li>
+//               )
+//             )
+//             }
+//        </ul>
+
+//         {/* toggling movies between showing all movies and a specific genre */}
+//         {/*may be filter to display specific*/}
+
+//        { /* section for selected movie card - where you give extra details about movie}*/}
+//        <div className = "card">
+//           {/* title - if you clikc on button it toggles the details */}
+//           {/* button to remove movie from the list   ==> technically goes into list item
+//           (figure out how to remove it and incorporate this)*/}
+//           {/*genre */}
+//           {/* conditionally display more details if showdetails = true  -- ternary operator */}
+//           {/* button to togglw shodetails or a function to toggle details */}
+//           {/*or you can have a show detail butto nto toggle showetails */}
+//        </div>
+//     </div>
+// );
